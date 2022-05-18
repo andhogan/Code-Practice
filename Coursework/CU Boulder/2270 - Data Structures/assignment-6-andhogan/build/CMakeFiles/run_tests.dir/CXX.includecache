@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jovyan/2270 - Data Structures/assignment-6-andhogan/code/PriorityQueue.cpp
+PriorityQueue.h
+/home/jovyan/2270 - Data Structures/assignment-6-andhogan/code/PriorityQueue.h
+
+/home/jovyan/2270 - Data Structures/assignment-6-andhogan/code/PriorityQueue.h
+memory
+-
+string
+-
+vector
+-
+
+/home/jovyan/2270 - Data Structures/assignment-6-andhogan/tests/test_PriorityQueue.cpp
+gtest/gtest.h
+-
+../code/PriorityQueue.h
+/home/jovyan/2270 - Data Structures/assignment-6-andhogan/code/PriorityQueue.h
+fstream
+-
+iostream
+-
+math.h
+-
+cmath
+-
+
