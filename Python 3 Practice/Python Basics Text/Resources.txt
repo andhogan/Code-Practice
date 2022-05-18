@@ -1,0 +1,4 @@
+Python Basics: A Practical Introduction to Python 3
+
+Link to Exercise solutions:
+https://github.com/realpython/python-basics-exercises
