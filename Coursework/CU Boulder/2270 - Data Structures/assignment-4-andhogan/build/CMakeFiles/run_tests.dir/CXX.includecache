@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jovyan/2270 - Data Structures/assignment-4-andhogan/code/Sorting.cpp
+Sorting.h
+/home/jovyan/2270 - Data Structures/assignment-4-andhogan/code/Sorting.h
+
+/home/jovyan/2270 - Data Structures/assignment-4-andhogan/code/Sorting.h
+string
+-
+vector
+-
+
