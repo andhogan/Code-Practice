@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jovyan/2270 - Data Structures/assignment-0-andhogan/code_1/functions.cpp
+functions.hpp
+/home/jovyan/2270 - Data Structures/assignment-0-andhogan/code_1/functions.hpp
+
+/home/jovyan/2270 - Data Structures/assignment-0-andhogan/code_1/functions.hpp
+string
+-
+iostream
+-
+fstream
+-
+
