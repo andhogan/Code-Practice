@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jovyan/2270 - Data Structures/assignment-8-andhogan/app/main.cpp
+iostream
+-
+../code/Huffman.h
+/home/jovyan/2270 - Data Structures/assignment-8-andhogan/code/Huffman.h
+
+/home/jovyan/2270 - Data Structures/assignment-8-andhogan/code/Huffman.cpp
+Huffman.h
+/home/jovyan/2270 - Data Structures/assignment-8-andhogan/code/Huffman.h
+
+/home/jovyan/2270 - Data Structures/assignment-8-andhogan/code/Huffman.h
+string
+-
+memory
+-
+vector
+-
+string
+-
+queue
+-
+map
+-
+iostream
+-
+
