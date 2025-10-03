@@ -8,6 +8,18 @@ const Statistics = ({ good, neutral, bad }) => {
   let all = good+neutral+bad
   let average = (good-bad)/(all)
   let positive = ((good/all) * 100).toString() + ' %'
+  
+  // display no feedback if none have been given, 
+  // else fall down to return statistics
+  if (all === 0) {
+    return (
+      <div>
+        <Header text='statistics'/>
+        No feedback has been given
+      </div>
+    )
+  }
+
   return (
     <div>
       <Header text='statistics'/>
