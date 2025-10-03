@@ -2,15 +2,15 @@ import { useState } from 'react'
 
 const Header = ({ text }) => <h1>{text}</h1>
 
-const Display = ({ text, counter }) => <div>{text} {counter}</div>
+const StatisticsLine = ({ text, counter }) => <div>{text} {counter}</div>
 
 const Statistics = ({ good, neutral, bad }) => {
   let all = good+neutral+bad
   let average = (good-bad)/(all)
   let positive = ((good/all) * 100).toString() + ' %'
   
-  // display no feedback if none have been given, 
-  // else fall down to return statistics
+  // Display no feedback if none has been given, 
+  // else fall down to return statistics lines
   if (all === 0) {
     return (
       <div>
@@ -23,12 +23,12 @@ const Statistics = ({ good, neutral, bad }) => {
   return (
     <div>
       <Header text='statistics'/>
-      <Display text='good' counter={good} />
-      <Display text='neutral' counter={neutral} />
-      <Display text='bad' counter={bad} />
-      <Display text='all' counter={good+neutral+bad} />
-      <Display text='average' counter={average} />
-      <Display text='positive' counter={positive} />
+      <StatisticsLine text='good' counter={good} />
+      <StatisticsLine text='neutral' counter={neutral} />
+      <StatisticsLine text='bad' counter={bad} />
+      <StatisticsLine text='all' counter={good+neutral+bad} />
+      <StatisticsLine text='average' counter={average} />
+      <StatisticsLine text='positive' counter={positive} />
     </div>
   )
 
