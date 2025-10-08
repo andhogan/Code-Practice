@@ -1,6 +1,28 @@
 import { useState } from 'react'
 
+const Header = ({ text }) => <h1>{text}</h1>
+
 const Button = ({ onClick, text }) => <button onClick={onClick}>{text}</button>
+
+const MostVotes = ({ votes, mostVoted, mostVotedAnecdote }) => {
+  let blankArray = Array(votes.length).fill(0)
+  if (votes === blankArray) {
+    return (
+      <div>
+        No votes have been received.
+      </div>
+    )
+  }
+
+  return (
+    <div>
+      {mostVotedAnecdote} 
+      <br></br>
+      <br></br>
+      This anecdote has {votes[mostVoted]} upvotes.
+    </div>
+  )
+}
 
 const App = () => {
   const anecdotes = [
@@ -16,6 +38,7 @@ const App = () => {
    
   const [selected, setSelected] = useState(0)
   const [votes, setVotes] = useState(Array(anecdotes.length).fill(0))
+  const [mostVoted, setMostVoted] = useState(selected)
   const votesCopy = [...votes]
 
   const getRandomInt = (max) => {
@@ -32,15 +55,21 @@ const App = () => {
     // console.log('Votes Copy:', votesCopy)
     votesCopy[selected] += 1
     setVotes(votesCopy)
+    if (votesCopy[selected] > votesCopy[mostVoted]) {
+      setMostVoted(selected)
+    }
   }
 
   return (
     <div>
+      <Header text='Anecdote of the Day' />
       <p>{anecdotes[selected]}</p>
-      <p>Selected: {selected}</p>
+      {/* <p>Selected: {selected}</p> */}
       <Button onClick={genRandomAnecdote} text='next anecdote'/>
       <Button onClick={upVote} text='vote' />
       <p>This anecdote has {votesCopy[selected]} upvotes.</p>
+      <Header text='Most Highly Voted Anecdote' />
+      <MostVotes votes={votes} mostVoted={mostVoted} mostVotedAnecdote={anecdotes[mostVoted]}/>
     </div>
   )
 }
