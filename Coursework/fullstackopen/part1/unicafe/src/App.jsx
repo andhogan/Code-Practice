@@ -2,7 +2,14 @@ import { useState } from 'react'
 
 const Header = ({ text }) => <h1>{text}</h1>
 
-const StatisticsLine = ({ text, counter }) => <div>{text} {counter}</div>
+const StatisticsLine = ({ text, counter }) => {
+  return(
+    <tr>
+      <td>{text}</td>
+      <td>{counter}</td>
+    </tr>
+  )
+}
 
 const Statistics = ({ good, neutral, bad }) => {
   let all = good+neutral+bad
@@ -14,22 +21,22 @@ const Statistics = ({ good, neutral, bad }) => {
   if (all === 0) {
     return (
       <div>
-        <Header text='statistics'/>
         No feedback has been given
       </div>
     )
   }
 
   return (
-    <div>
-      <Header text='statistics'/>
-      <StatisticsLine text='good' counter={good} />
-      <StatisticsLine text='neutral' counter={neutral} />
-      <StatisticsLine text='bad' counter={bad} />
-      <StatisticsLine text='all' counter={good+neutral+bad} />
-      <StatisticsLine text='average' counter={average} />
-      <StatisticsLine text='positive' counter={positive} />
-    </div>
+    <table>
+      <tbody>
+        <StatisticsLine text='good' counter={good} />
+        <StatisticsLine text='neutral' counter={neutral} />
+        <StatisticsLine text='bad' counter={bad} />
+        <StatisticsLine text='all' counter={all} />
+        <StatisticsLine text='average' counter={average} />
+        <StatisticsLine text='positive' counter={positive} />
+      </tbody>
+    </table>
   )
 
 }
@@ -58,6 +65,7 @@ const App = () => {
       <Button onClick={increaseNeutralByOne} text='neutral'/>
       <Button onClick={increaseBadByOne} text='bad'/>
       <Button onClick={resetToZero} text='reset'/>
+      <Header text='statistics'/>
       <Statistics good={good} neutral={neutral} bad={bad}/>
     </div>
   )
