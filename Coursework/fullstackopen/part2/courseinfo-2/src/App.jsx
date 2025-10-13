@@ -1,16 +1,5 @@
 import { useState } from 'react'
 
-const Total = (props) => {
-  return (
-    <p>Number of exercises {
-      props.parts[0].exercises + 
-      props.parts[1].exercises + 
-      props.parts[2].exercises
-      }
-    </p>
-  )
-}
-
 const Header = ({ name }) => {
   return (
     <div>
@@ -30,9 +19,14 @@ const Part = ({ part, exercises }) => {
 }
 
 const Content = ({ parts }) => {
+  const total = parts.reduce((sum, part) => {
+    // console.log('This is sum:', sum, 'This is part:', part, 'This is sum+part.exercises', sum+part.exercises)
+    return sum + part.exercises}, 0
+  )
   return (
     <>
-      {parts.map(obj => <Part key={obj.id}part={obj.name} exercises={obj.exercises}/>)}
+      {parts.map(obj => <Part key={obj.id} part={obj.name} exercises={obj.exercises}/>)}
+      <p><strong>Total of {total} exercises</strong></p>
     </>
   )
 }
